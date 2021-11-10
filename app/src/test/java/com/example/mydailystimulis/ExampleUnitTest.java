@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.mydailystimulis;
 
 import org.junit.Test;
 
