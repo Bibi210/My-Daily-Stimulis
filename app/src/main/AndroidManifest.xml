@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyDailyStimulis">
         <activity
+            android:name=".Ball_Game"
+            android:exported="false" />
+        <activity
+            android:name=".Memory_Game"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

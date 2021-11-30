@@ -18,3 +18,9 @@ Ces derniers ayant été spécifiquement crées pour la stimulation cognitive.
 Brahima Dibassi\
 19005521\
 L3 Informatique
+
+
+Memory
+Jeux des cercles
+Annagrames
+Calcul Mental
