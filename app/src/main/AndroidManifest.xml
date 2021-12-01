@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyDailyStimulis">
         <activity
+            android:name=".Calculs"
+            android:exported="false" />
+        <activity
             android:name=".Ball_Game"
             android:exported="false" />
         <activity
