@@ -1,6 +1,5 @@
 package com.example.mydailystimulis;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Canvas;
@@ -267,13 +266,14 @@ class Point {
       this.y  += Other.y;
   }
 }
-
 class Utils {
 
   static float rand_range(float Min, float Max) {
     return (Min + (float) (Math.random() * ((Max - Min) + 1)));
   }
-
+  static int rand_int(int Min, int Max) {
+    return (Min + (int) (Math.random() * ((Max - Min) + 1)));
+  }
   static boolean probabilty(float prob) {
     return rand_range(0, 100) < prob;
   }

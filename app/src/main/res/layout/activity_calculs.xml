@@ -16,7 +16,7 @@
         android:layout_marginEnd="10dp"
         android:editable="false"
         android:ems="10"
-        android:inputType="number"
+        android:inputType="numberSigned"
         android:textAlignment="center"
         app:layout_constraintEnd_toStartOf="@+id/Equal_Equation3"
         app:layout_constraintStart_toEndOf="@+id/Operator_Equation1"
@@ -32,7 +32,7 @@
         android:layout_marginEnd="10dp"
         android:editable="false"
         android:ems="10"
-        android:inputType="number"
+        android:inputType="numberSigned"
         android:textAlignment="center"
         app:layout_constraintEnd_toStartOf="@+id/Operator_Equation3"
         app:layout_constraintHorizontal_bias="0.0"
@@ -49,7 +49,8 @@
         android:layout_marginEnd="10dp"
         android:editable="false"
         android:ems="10"
-        android:inputType="number"
+                android:inputType="numberSigned"
+
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -68,7 +69,7 @@
         app:layout_constraintStart_toEndOf="@+id/B_Equation3"
         app:layout_constraintTop_toBottomOf="@+id/Equal_Equation2" />
 
-    <TextView
+    <EditText
         android:id="@+id/Operator_Equation3"
         android:layout_width="70dp"
         android:layout_height="50dp"
@@ -90,7 +91,7 @@
         android:layout_marginEnd="10dp"
         android:editable="false"
         android:ems="10"
-        android:inputType="number"
+        android:inputType="numberSigned"
         android:textAlignment="center"
         app:layout_constraintEnd_toStartOf="@+id/Equal_Equation2"
         app:layout_constraintStart_toEndOf="@+id/Operator_Equation1"
@@ -108,7 +109,7 @@
         app:layout_constraintStart_toEndOf="@+id/B_Equation1"
         app:layout_constraintTop_toBottomOf="@+id/calculs_restants" />
 
-    <TextView
+    <EditText
         android:id="@+id/Operator_Equation2"
         android:layout_width="70dp"
         android:layout_height="50dp"
@@ -130,7 +131,7 @@
         android:layout_marginEnd="10dp"
         android:editable="false"
         android:ems="10"
-        android:inputType="number"
+        android:inputType="numberSigned"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -147,7 +148,7 @@
         android:layout_marginEnd="10dp"
         android:editable="false"
         android:ems="10"
-        android:inputType="number"
+        android:inputType="numberSigned"
         android:textAlignment="center"
         app:layout_constraintEnd_toStartOf="@+id/Operator_Equation2"
         app:layout_constraintHorizontal_bias="0.0"
@@ -163,7 +164,8 @@
         android:layout_marginTop="132dp"
         android:editable="false"
         android:ems="10"
-        android:inputType="number"
+                android:inputType="numberSigned"
+
         android:textAlignment="center"
         app:layout_constraintStart_toEndOf="@+id/Operator_Equation1"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
@@ -180,7 +182,7 @@
         app:layout_constraintStart_toEndOf="@+id/B_Equation1"
         app:layout_constraintTop_toBottomOf="@+id/calculs_restants" />
 
-    <TextView
+    <EditText
         android:id="@+id/Operator_Equation1"
         android:layout_width="70dp"
         android:layout_height="50dp"
@@ -202,7 +204,8 @@
         android:layout_marginEnd="10dp"
         android:editable="false"
         android:ems="10"
-        android:inputType="number"
+                android:inputType="numberSigned"
+
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -218,7 +221,7 @@
         android:layout_marginTop="48dp"
         android:editable="false"
         android:ems="10"
-        android:inputType="number"
+        android:inputType="numberSigned"
         android:textAlignment="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/calculs_score"
@@ -242,7 +245,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/Calculs_Validate"
         android:layout_width="198dp"
         android:layout_height="77dp"
         android:layout_marginStart="106dp"
@@ -253,14 +256,15 @@
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/B_Equation3" />
+        app:layout_constraintTop_toBottomOf="@+id/B_Equation3"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/calculs_score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="35dp"
         android:layout_marginTop="57dp"
         android:layout_marginEnd="227dp"
         android:layout_marginBottom="56dp"
@@ -268,7 +272,8 @@
         android:textColor="#FFEB3B"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/A_Equation1"
-        app:layout_constraintEnd_toStartOf="@+id/calculs_restants"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.461"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
@@ -276,12 +281,14 @@
         android:id="@+id/calculs_restants"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="200dp"
+        android:layout_marginStart="250dp"
         android:layout_marginTop="57dp"
+        android:layout_marginEnd="42dp"
         android:text="Restant"
         android:textColor="#FFEB3B"
         android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/calculs_score"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

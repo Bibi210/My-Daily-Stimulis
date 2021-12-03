@@ -24,7 +24,7 @@ public class MainActivity
   @Override
   public void onClick(View v) {
     if (main_start.equals(v)) {
-      Intent Go_game = new Intent(MainActivity.this, Ball_Game.class);
+      Intent Go_game = new Intent(MainActivity.this, Calculs.class);
       startActivity(Go_game);
     }
   }
