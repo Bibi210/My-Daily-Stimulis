@@ -4,9 +4,8 @@ Mon idée d'application est une application de mini-jeux qui propose plusieurs j
 
 Par exemple :
 - Memory
-- 3 Mots pour une phrase
 - Toucher la bonne forme au bon moment
-- Alpha'grille 
+- Calcul Mental
 - etc
 
 Le but de l'application est de donner l'accés aux exercices cognitifs au plus grand nombre le tout sous une forme ludique.\
