@@ -25,6 +25,7 @@ public class Memory_Game
   int combo = 1;
   TextView score_view;
   TextView combo_view;
+  String Pseudo;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +34,9 @@ public class Memory_Game
     score_view = findViewById(R.id.Score);
     combo_view = findViewById(R.id.Combo);
     DisplayScore();
-    init();
+    views_init();
+
+    Pseudo = this.getIntent().getStringExtra("Pseudo");
   }
 
   @Override
@@ -47,8 +50,8 @@ public class Memory_Game
   }
 
   public void DisplayScore() {
-    String score_txt = "Score : " + Integer.toString(score);
-    String combo_txt = "Combo : " + Integer.toString(combo) + " multiply";
+    String score_txt = "Score : " + score;
+    String combo_txt = "Combo : " + combo + " multiply";
     score_view.setText(score_txt);
     combo_view.setText(combo_txt);
   }
@@ -73,11 +76,11 @@ public class Memory_Game
             prev_card.won = true;
             Showed_Cards = 0;
 
-            score += combo * 4000;
+            score += combo * 1000;
             combo++;
           } else {
             combo = 1;
-            score -= 200;
+            score -= 100;
             Game_Card tmp = prev_card;
             hide_cards(tmp, clicked_card, 1);
           }
@@ -92,13 +95,15 @@ public class Memory_Game
   public void end_game() {
     int won = 0;
     for (Game_Card card : Game_Cards) {
-      if (card.won) {
+      if (card.won)
         won++;
-      }
+
     }
     if (won == Game_Cards.size() - 1) {
+      new Data_Base_Handling(this).addScore(Pseudo,score);
       Intent Menu = new Intent(Memory_Game.this, MainActivity.class);
       Menu.putExtra("Score", score);
+      Menu.putExtra("Pseudo", Pseudo);
       startActivity(Menu);
     }
   }
@@ -151,7 +156,7 @@ public class Memory_Game
     }
   }
 
-  public void init() {
+  public void views_init() {
     Game_Cards = new ArrayList<>();
 
     Vector<Integer> img_ls = new Vector<>();

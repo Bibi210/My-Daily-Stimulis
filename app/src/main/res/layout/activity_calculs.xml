@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#576E78"
+    android:background="#6A6262"
     tools:context=".Calculs">
 
     <EditText
@@ -49,7 +49,7 @@
         android:layout_marginEnd="10dp"
         android:editable="false"
         android:ems="10"
-                android:inputType="numberSigned"
+        android:inputType="numberSigned"
 
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
@@ -164,7 +164,7 @@
         android:layout_marginTop="132dp"
         android:editable="false"
         android:ems="10"
-                android:inputType="numberSigned"
+        android:inputType="numberSigned"
 
         android:textAlignment="center"
         app:layout_constraintStart_toEndOf="@+id/Operator_Equation1"
@@ -204,7 +204,7 @@
         android:layout_marginEnd="10dp"
         android:editable="false"
         android:ems="10"
-                android:inputType="numberSigned"
+        android:inputType="numberSigned"
 
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
@@ -235,7 +235,7 @@
         android:minHeight="48dp"
         android:text="Mentalus Calculus"
         android:textAlignment="center"
-        android:textColor="#EA0E0E"
+        android:textColor="@color/black"
         android:textSize="32sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -269,7 +269,7 @@
         android:layout_marginEnd="227dp"
         android:layout_marginBottom="56dp"
         android:text="Score"
-        android:textColor="#FFEB3B"
+        android:textColor="@color/orange"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/A_Equation1"
         app:layout_constraintEnd_toEndOf="parent"
@@ -285,7 +285,7 @@
         android:layout_marginTop="57dp"
         android:layout_marginEnd="42dp"
         android:text="Restant"
-        android:textColor="#FFEB3B"
+        android:textColor="@color/orange"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

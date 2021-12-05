@@ -1,15 +1,12 @@
 package com.example.mydailystimulis;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import java.text.ParseException;
@@ -25,24 +22,27 @@ public class Calculs extends AppCompatActivity implements View.OnClickListener {
   int turn = 4;
   TextView turn_view;
   boolean correction_mode = false;
+  String Pseudo;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_calculs);
-    EditText[] Equation_1 = {
+
+    //Raccordement des Views
+    EditText[] Equation_1_Views = {
       findViewById(R.id.A_Equation1),
       findViewById(R.id.Operator_Equation1),
       findViewById(R.id.B_Equation1),
       findViewById(R.id.C_Equation1),
     };
-    EditText[] Equation_2 = {
+    EditText[] Equation_2_Views = {
       findViewById(R.id.A_Equation2),
       findViewById(R.id.Operator_Equation2),
       findViewById(R.id.B_Equation2),
       findViewById(R.id.C_Equation2),
     };
-    EditText[] Equation_3 = {
+    EditText[] Equation_3_Views = {
       findViewById(R.id.A_Equation3),
       findViewById(R.id.Operator_Equation3),
       findViewById(R.id.B_Equation3),
@@ -52,10 +52,16 @@ public class Calculs extends AppCompatActivity implements View.OnClickListener {
     scores_view = findViewById(R.id.calculs_score);
     Valid_btn = findViewById(R.id.Calculs_Validate);
     Valid_btn.setOnClickListener(this);
+    //Raccordement des Views
 
-    Equations[0] = new equation(Equation_1);
-    Equations[1] = new equation(Equation_2);
-    Equations[2] = new equation(Equation_3);
+    // Instantiation of equations
+    Equations[0] = new equation(Equation_1_Views);
+    Equations[1] = new equation(Equation_2_Views);
+    Equations[2] = new equation(Equation_3_Views);
+
+    // Get User Pseudo
+    Pseudo = this.getIntent().getStringExtra("Pseudo");
+
     display_stat();
     nextTurn();
   }
@@ -82,6 +88,7 @@ public class Calculs extends AppCompatActivity implements View.OnClickListener {
       correction_mode = false;
     } else {
       false_eq.focus();
+      false_eq.Views[false_eq.trou_pos].setError("Faux");
       correction_mode = true;
     }
   }
@@ -100,17 +107,21 @@ public class Calculs extends AppCompatActivity implements View.OnClickListener {
   }
 
   void end_game() {
+    new Data_Base_Handling(this).addScore(Pseudo,scores);
     Intent Menu = new Intent(Calculs.this, MainActivity.class);
     Menu.putExtra("Score", scores);
+    Menu.putExtra("Pseudo", Pseudo);
     startActivity(Menu);
   }
 
   void display_stat() {
-    String score_txt = "Score : " + Integer.toString(scores);
-    String turn_txt = "Restants : " + Integer.toString(turn);
+    String score_txt = "Score : " + scores;
+    String turn_txt = "Restants : " + turn;
     scores_view.setText(score_txt);
     turn_view.setText(turn_txt);
   }
+
+
 }
 
 class equation {
@@ -130,6 +141,7 @@ class equation {
       champ.setCursorVisible(false);
       champ.setFocusable(false);
       champ.setFocusableInTouchMode(false);
+      champ.setError(null);
     }
     for (Integer Eq_data : Equation_data) {
       Eq_data = null;

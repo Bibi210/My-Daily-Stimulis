@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#050505"
+    android:background="#6A6262"
     tools:context=".Memory_Game">
 
     <TextView
@@ -15,7 +15,7 @@
         android:layout_marginBottom="24dp"
         android:text="Memory"
         android:textAlignment="center"
-        android:textColor="#EA0E0E"
+        android:textColor="@color/black"
         android:textSize="32sp"
         app:layout_constraintBottom_toTopOf="@+id/Score"
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,7 +30,7 @@
         android:layout_marginEnd="70dp"
         android:layout_marginBottom="70dp"
         android:text="Lorem Ipsum"
-        android:textColor="#FFEB3B"
+        android:textColor="@color/orange"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/imageView3"
         app:layout_constraintEnd_toEndOf="parent"
@@ -44,7 +44,7 @@
         android:layout_marginTop="96dp"
         android:layout_marginBottom="70dp"
         android:text="Lorem Ipsum"
-        android:textColor="#FFEB3B"
+        android:textColor="@color/orange"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/imageView1"
         app:layout_constraintStart_toStartOf="parent"
